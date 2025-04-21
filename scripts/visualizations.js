@@ -1,13 +1,10 @@
-//We only have to change background-color and height of the sorting element.
 
 var speed = 1000;
 
-// update the value of "speed" with the input from the user.
 inp_aspeed.addEventListener("input", vis_speed);
 
 function vis_speed() {
     var array_speed = inp_aspeed.value;
-    //parseInt - Converts a string to an integer.
     switch (parseInt(array_speed)) {
         case 1:
             speed = 1;
@@ -26,16 +23,14 @@ function vis_speed() {
             break;
     }
 
-    //It does so by dividing 10000 into (Math.floor(array_size / 10) * speed), which decreases numerator as you increase denominator,
-    delay_time = 10000 / (Math.floor(array_size / 10) * speed); //Decrease numerator to increase speed.
+    delay_time = 10000 / (Math.floor(array_size / 10) * speed); 
 }
 
-var delay_time = 10000 / (Math.floor(array_size / 10) * speed); //Decrease numerator to increase speed.
-var c_delay = 0; //This is updated ov every div change so that visualization is visible.
+var delay_time = 10000 / (Math.floor(array_size / 10) * speed); 
+var c_delay = 0; 
 
 function div_update(cont, height, color) {
     window.setTimeout(function() {
-        //update the color 
         cont.style = " margin:0% " + margin_size + "%; width:" + (100 / array_size - (2 * margin_size)) + "%; height:" + height + "%; background-color:" + color + ";";
     }, c_delay += delay_time);
 }
